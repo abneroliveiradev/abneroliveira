@@ -1,0 +1,62 @@
+---
+title: Como fazer um UPDATE JOIN no MySQL
+date: '2023-07-04'
+tags: ['MySQL', 'Development']
+draft: false
+summary: Neste artigo, vamos mostrar como fazer um UPDATE JOIN no MySQL usando duas e três tabelas.
+---
+
+# Como fazer um UPDATE JOIN no MySQL
+
+O MySQL é um sistema gerenciador de banco de dados relacional amplamente utilizado. Ele permite aos usuários gerenciar e manipular dados de várias maneiras, incluindo através de operações de atualização.
+
+Uma operação de atualização com JOIN é uma maneira de atualizar dados de uma tabela com base em dados relacionados em outra tabela.
+
+Neste artigo, vamos mostrar como fazer um UPDATE JOIN no MySQL usando duas e três tabelas.
+
+## Código básico com duas tabelas
+
+```sql
+UPDATE tabela1
+JOIN tabela2 ON tabela1.id = tabela2.id_tabela1
+SET tabela1.coluna = novo_valor
+WHERE tabela2.coluna = valor;
+```
+
+Neste exemplo, estamos atualizando a tabela1, juntando-a com a tabela2 usando o ID como ponto de junção. Estamos definindo a coluna da tabela1 para um novo valor, e estamos selecionando apenas as linhas da tabela2 onde a coluna é igual a um determinado valor.
+
+```sql
+UPDATE clientes
+JOIN pedidos ON clientes.id = pedidos.id_cliente
+SET clientes.nome = "Ana Silva"
+WHERE pedidos.status = "finalizado";
+```
+
+Neste exemplo, estamos atualizando o nome do cliente para "Ana Silva" na tabela clientes, onde o status do pedido na tabela pedidos é "finalizado".
+
+Código com três tabelas:
+
+```sql
+UPDATE tabela1
+JOIN tabela2 ON tabela1.id = tabela2.id_tabela1
+JOIN tabela3 ON tabela2.id = tabela3.id_tabela2
+SET tabela1.coluna = novo_valor
+WHERE tabela3.coluna = valor;
+```
+
+Neste exemplo, estamos juntando três tabelas juntas, tabela1, tabela2 e tabela3. A tabela1 é atualizada com base nas informações relacionadas nas tabelas 2 e 3. O ID é usado como o ponto de junção entre as tabelas. Estamos definindo a coluna da tabela1 para um novo valor, e estamos selecionando apenas as linhas da tabela3 onde a coluna é igual a um determinado valor.
+
+```sql
+UPDATE produtos
+JOIN categorias ON produtos.id_categoria = categorias.id
+JOIN fornecedores ON categorias.id_fornecedor = fornecedores.id
+SET produtos.preco = produtos.preco * 1.1
+WHERE fornecedores.pais = "China";
+```
+
+Conclusão
+Como mostrado neste artigo, atualizar dados com join no MySQL é uma técnica poderosa para manipular e gerenciar dados de várias tabelas de forma eficiente.
+
+O exemplo mostrado aqui é apenas a ponta do iceberg, e existem muitas outras técnicas avançadas que podem ser usadas para manipular dados no MySQL.
+
+Espero que tenha gostado! Se houver mais alguma dúvida ou precisar de ajuda com qualquer outra coisa, não hesite em me perguntar. Estou sempre disponível para ajudar.
