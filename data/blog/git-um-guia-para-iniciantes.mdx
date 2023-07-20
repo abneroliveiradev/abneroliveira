@@ -1,0 +1,187 @@
+---
+title: Git - Um Guia para Iniciantes
+date: 2023-07-20
+tags: [git, controle de versão, desenvolvimento de software]
+author: Abner Oliveira
+---
+
+![IMAGEM DE TOPO](/static/images/git-logo1.jpg)
+
+O Git é uma ferramenta poderosa e essencial para desenvolvedores que desejam trabalhar de forma colaborativa e rastrear alterações em projetos de software. Se você está iniciando no mundo da programação ou precisa aprender a operar o Git, este guia passo a passo o ajudará a começar.
+
+## O que é o Git?
+
+O Git é um sistema de controle de versão distribuído que permite que você rastreie as mudanças feitas em um projeto ao longo do tempo. Ele foi desenvolvido por Linus Torvalds em 2005 e rapidamente se tornou a escolha padrão para desenvolvimento colaborativo de software.
+
+## Instalação do Git
+
+Antes de começarmos, é necessário instalar o Git em seu sistema. O Git é compatível com diversas plataformas, como Windows, macOS e Linux. Siga as etapas abaixo para realizar a instalação:
+
+### Windows
+
+Baixe o instalador do Git no [site oficial](https://git-scm.com/download/win) e execute-o. Siga as instruções do instalador para concluir a instalação.
+
+### macOS
+
+Se você usa o Homebrew, pode instalar o Git digitando o seguinte comando no terminal:
+
+```bash
+brew install git
+```
+
+## Fluxo de Trabalho do Git
+
+Seus repositórios locais consistem em três "árvores" mantidas pelo Git. A primeira delas é sua **Working Directory** que contém os arquivos vigentes. A segunda é o **Index**, que funciona como uma área temporária. E, finalmente, a **HEAD** aponta para o último commit (confirmação) que você fez.
+
+### Working Directory
+
+A **Working Directory** é o diretório em seu sistema de arquivos onde você trabalha com os arquivos do projeto. Você pode criar, modificar e excluir arquivos neste diretório.
+
+### Index
+
+O **Index**, também conhecido como "staging area", é uma área temporária onde você prepara as mudanças que deseja incluir no próximo commit. Antes de fazer um commit, você adiciona as alterações desejadas ao Index.
+
+### HEAD
+
+A **HEAD** é um ponteiro que aponta para o último commit feito no ramo atual. Em outras palavras, é o commit mais recente que você fez.
+
+![Git Workflow](/static/images/trees.png)
+
+No Git, o processo de adicionar e confirmar as alterações é fundamental para rastrear o histórico de desenvolvimento de um projeto. Vamos entender melhor esse processo, que é o primeiro passo no fluxo de trabalho básico do Git.
+
+## Adicionando e Confirmar Mudanças
+
+### Adicionando as Mudanças (git add)
+
+Para começar, você pode propor mudanças e adicionar arquivos específicos ou todos os arquivos modificados ao "Index" (também conhecido como "staging area"). O "Index" é uma área temporária onde você prepara as mudanças que deseja incluir no próximo commit.
+
+Para adicionar um arquivo específico ao "Index", use o seguinte comando:
+
+```bash
+git add <arquivo>
+```
+
+Se você deseja adicionar todas as alterações de uma só vez, utilize o curinga (\*):
+
+```bash
+git add *
+```
+
+### Confirmar as Mudanças (git commit)
+
+Após adicionar as mudanças desejadas ao "Index", é hora de confirmar essas alterações, criando um novo commit. Um commit é uma confirmação das alterações feitas, acompanhado por uma mensagem descritiva que explica o que foi alterado.
+
+Para realizar o commit, utilize o seguinte comando:
+
+```bash
+git commit -m "comentários das alterações"
+```
+
+Agora o arquivo foi enviado para o HEAD, mas ainda não para o repositório remoto.
+
+## Enviando Alterações
+
+Suas alterações agora estão no HEAD da sua cópia de trabalho local. Para enviar estas alterações ao seu repositório remoto, execute o seguinte comando:
+
+```bash
+git push origin master
+```
+
+Substitua "master" por qualquer ramo (branch) que você deseje, enviando suas alterações para esse ramo específico.
+
+Caso você não tenha clonado um repositório existente e queira conectar o seu repositório a um servidor remoto, você deve adicioná-lo usando o seguinte comando:
+
+```bash
+git remote add origin <servidor>
+```
+
+## Trabalhando com Branches no Git
+
+Branches, também conhecidos como "ramos", são utilizados no Git para desenvolver funcionalidades de forma isolada, sem interferir no código principal. O branch "master" é o branch padrão quando você cria um repositório. No entanto, é recomendado utilizar outros branches para desenvolver novas funcionalidades.
+
+Quando você inicia o desenvolvimento de uma nova funcionalidade, cria um novo branch para essa tarefa específica. Essa abordagem permite que você trabalhe de forma independente e evite conflitos com outras modificações que possam estar ocorrendo no branch "master" ou em outros branches.
+
+Para criar um novo branch, você pode usar o seguinte comando:
+
+```bash
+git checkout -b nome_do_branch
+```
+
+Para retornar para a branch "master":
+
+```bash
+git checkout master
+```
+
+Remova o branch da seguinte forma:
+
+```bash
+git checkout -d master
+```
+
+![Git Branches](/static/images/git-branches.png)
+
+A branch somente estará disponível para outros desenvolvedores a menos que você envie o branch para seu repositório remoto
+
+```bash
+git push origin <funcionalidade_x>
+```
+
+Trabalhar com branches é uma prática essencial para o desenvolvimento de software em equipe, pois permite que vários membros trabalhem em funcionalidades distintas simultaneamente, mantendo o código organizado e reduzindo a possibilidade de conflitos.
+
+## Atualizar e Mesclar
+
+Para atualizar seu repositório local com a mais nova versão da branch atual, execute:
+
+```bash
+git pull
+```
+
+Para fazer merge de um outra branch na sua branch ativa (ex. master), use:
+
+```bash
+git merge <branch>
+```
+
+O Git tentará fazer o merge das alterações automaticamente. No entanto, em alguns casos, podem ocorrer conflitos entre as mudanças locais e as alterações vindas do outro branch. Se isso acontecer, você precisará resolver esses conflitos manualmente editando os arquivos mostrados pelo Git.
+
+Depois de resolver os conflitos, você deve marcar os arquivos como mesclados usando o comando:
+
+```bash
+git add <arquivo>
+```
+
+Isso indicará ao Git que os conflitos foram resolvidos e os arquivos estão prontos para serem mesclados.
+
+Antes de fazer o merge das alterações, você também pode visualizá-las antecipadamente usando o comando:
+
+```bash
+git diff <branch_origem> <branch_destino>
+```
+
+## Sobrescrever Alterações Locais
+
+Se você acidentalmente fez alguma coisa errada no Git (o que raramente acontece, é claro ;), não se preocupe! Existem maneiras de desfazer as alterações e voltar ao estado anterior.
+
+Para desfazer as alterações em um arquivo específico e substituí-las pelo conteúdo mais recente no HEAD (versão mais recente do repositório), você pode usar o comando:
+
+```bash
+git checkout -- <arquivo>
+```
+
+Isso irá sobrescrever as mudanças locais no arquivo com o conteúdo mais recente do repositório. No entanto, as alterações que você já adicionou ao "index" (também conhecido como "staging area") e os novos arquivos que você adicionou serão mantidos.
+
+Agora, se você deseja desfazer todas as alterações locais, incluindo os commits feitos, e voltar ao histórico mais recente do servidor, você pode fazer o seguinte:
+
+```bash
+git fetch origin
+git reset --hard origin/master
+```
+
+O comando "git fetch origin" irá buscar as informações mais recentes do servidor, atualizando o seu repositório local sem fazer alterações no seu branch atual. Em seguida, o comando "git reset --hard origin/master" irá redefinir a sua branch master local para o mesmo ponto em que se encontra a branch "origin/master" (a branch no servidor). Isso significa que todas as suas alterações locais e commits que ainda não foram enviados para o servidor serão removidos.
+
+É importante ter cuidado ao usar o comando "git reset --hard", pois ele pode causar a perda permanente de alterações que ainda não foram enviadas para o servidor.
+
+Esses comandos são úteis para corrigir erros e desfazer alterações indesejadas no Git. Lembre-se sempre de verificar suas ações antes de executar comandos que possam causar perda de dados.
+
+Espero que isso tenha sido útil! Se você tiver mais perguntas ou precisar de mais ajuda, estou aqui para ajudar!
