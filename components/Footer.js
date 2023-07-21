@@ -1,6 +1,7 @@
 import Link from './Link'
 import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social-icons'
+import { DevIcon } from './DevIcon'
 
 export default function Footer() {
   return (
@@ -22,9 +23,33 @@ export default function Footer() {
           <Link href="/">{siteMetadata.title}</Link>
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="https://github.com/timlrx/tailwind-nextjs-starter-blog">
-            Tailwind Nextjs Theme
-          </Link>
+          <div className="flex items-center space-x-1">
+            <span className="mr-1 text-gray-500 dark:text-gray-400">Built with</span>
+            <div className="flex space-x-1.5">
+              <Link href="https://nextjs.org?ref=abneroliveira.dev">
+                <DevIcon type="NextJS" className="h-5 w-5" />
+              </Link>
+              <Link href="https://tailwindcss.com?ref=abneroliveira.dev">
+                <DevIcon type="TailwindCSS" className="h-5 w-5" />
+              </Link>
+              <Link href="https://www.prisma.io?ref=abneroliveira.dev">
+                <DevIcon type="Prisma" className="h-5 w-5" />
+              </Link>
+              <Link href="https://tc39.es/ecma262/">
+                <DevIcon type="Javascript" className="h-5 w-5" />
+              </Link>
+              {/* <Link href="https://umami.is?ref=abneroliveira.dev" className="pl-px">
+                <DevIcon type="Umami" className="h-5 w-5" />
+              </Link> */}
+            </div>
+            <span className="px-1 text-gray-400 dark:text-gray-500">-</span>
+            <Link
+              href={siteMetadata.siteRepo}
+              className="text-gray-500 underline underline-offset-4 dark:text-gray-400"
+            >
+              <span data-umami-event="view-source">View source</span>
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
