@@ -1,6 +1,6 @@
 ---
 name: Abner Oliveira
-avatar: /static/images/avatar2.jfif
+avatar: /static/images/avatar.jpeg
 occupation: Developer and Firefighter
 company: CBMCE
 email: abneroliveiradev@gmail.com
@@ -18,19 +18,22 @@ Software Engineer - Fortaleza-CE, Brasil
 
 Sou um desenvolvedor experiente e confiável, com mais de uma década de atuação no mercado de software. Minha trajetória profissional foi marcada por importantes conquistas, especialmente no âmbito do CBMCE e da Defesa Civil do Estado do Ceará, onde desempenhei um papel fundamental na otimização dos processos. Graças às minhas contribuições, essas instituições alcançaram resultados significativos, na ordem de milhões, tanto em termos de redução de custos quanto de aumento na arrecadação.
 
-## Areas of Expertise
+## Áreas de Expertise
 
 | Programming Languages                                  | Platforms / Frameworks / Libraries                       |
 | ------------------------------------------------------ | -------------------------------------------------------- |
-| JavaScript, PHP                                        | Shopify, Shopify Theme + APIs                            |
-| HTML5, CSS3                                            | Node.js, NestJS, Next React.js                           |
-|                                                        | TypeScript, Express, Koa.js, Mongoose, JWT, GraphQL      |
-|                                                        | jQuery, Bootstrap, Tailwind CSS, SCSS, Semantic UI       |
+| JavaScript, Typescript, PHP                            | Node.js, NestJS, NextJs, React.js, React Native          |
+| HTML5, CSS3                                            | Redux, TypeORM, Knex.js, Firebase, Native Base           |
+|                                                        | Express, Mongoose, JWT, GraphQL                          |
+|                                                        | Material UI, Tailwind CSS                                |
+|                                                        | Gitlab CI, Kubernetes, Docker, GCP, GKE, Rancher         |
+|                                                        | Agile, Scrum                                             |
+|                                                        | Scriptcasem, CodeIgniter                                 |
 |                                                        |                                                          |
 | <span className="font-semibold">Version Control</span> | <span className="font-semibold">Foreign Languages</span> |
 | Git (GitHub, Gitlab)                                   | English: B2                                              |
 
-## Working Experiences
+## Experiência Profissional
 
 ### Senior Full-Stack Developer & Tech Leader
 
