@@ -1,11 +1,9 @@
 const projectsData = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    title: 'Convertt',
+    description: `Your universal converter. Cover units, measures, images, create avatars and recover images with artificial intelligence.`,
+    imgSrc: '/static/images/convertt.png',
+    href: 'https://convertt.vercel.app',
   },
   {
     title: 'The Time Machine',
