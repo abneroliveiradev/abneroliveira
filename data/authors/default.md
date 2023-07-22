@@ -28,8 +28,7 @@ Sou um desenvolvedor experiente e confiável, com mais de uma década de atuaç�
 |                                                        | Material UI, Tailwind CSS                                |
 |                                                        | Gitlab CI, Kubernetes, Docker, GCP, GKE, Rancher         |
 |                                                        | Agile, Scrum                                             |
-|                                                        | Scriptcasem, CodeIgniter                                 |
-|                                                        |                                                          |
+|                                                        | Scriptcase, CodeIgniter                                  |
 | <span className="font-semibold">Version Control</span> | <span className="font-semibold">Foreign Languages</span> |
 | Git (GitHub, Gitlab)                                   | English: B2                                              |
 
